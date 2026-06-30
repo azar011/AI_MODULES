@@ -1,0 +1,27 @@
+[
+  {
+    "department": "IT",
+    "checklist_name": "Smart Classroom",
+    "question": "Is projector functioning properly?",
+    "remarks": "Projector has no display and overheating",
+
+    "corrective_action": "Cleaned vents and replaced HDMI cable",
+
+    "root_cause": "Blocked airflow caused overheating",
+
+    "preventive_action": "Monthly maintenance and ventilation inspection"
+  },
+
+  {
+    "department": "Networking",
+    "checklist_name": "Internet Connectivity Check",
+    "question": "Is internet connectivity stable?",
+    "remarks": "Frequent network disconnection in admin block",
+
+    "corrective_action": "Restarted switch and replaced LAN cable",
+
+    "root_cause": "Damaged LAN cable caused instability",
+
+    "preventive_action": "Inspect cables monthly"
+  }
+]

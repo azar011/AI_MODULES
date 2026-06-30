@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPA Recommendation System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>CAPA Recommendation System</h1>
+
+    <div class="main-layout">
+
+        <!-- LEFT PANEL -->
+
+        <div class="panel">
+
+            <h2>Escalation Details</h2>
+
+            <textarea id="jsonInput">
+{
+    "department": "IT",
+    "checklist_name": "Smart Classroom",
+    "question": "Is projector functioning correctly?",
+    "remarks": "Projector shutting down automatically due to overheating"
+}
+            </textarea>
+
+            <div class="button-group">
+
+                <button id="recommendBtn">
+                    Recommend CAPA
+                </button>
+
+                <button id="acceptBtn">
+                    Accept
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+
+        <div class="panel">
+
+            <h2>CAPA Recommendation</h2>
+
+            <div class="form-group">
+                <label>Source</label>
+                <input
+                    id="sourceLabel"
+                    readonly
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Corrective Action</label>
+                <textarea
+                    id="correctiveAction"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Root Cause</label>
+                <textarea
+                    id="rootCause"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Preventive Action</label>
+                <textarea
+                    id="preventiveAction"
+                ></textarea>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

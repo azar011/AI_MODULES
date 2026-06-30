@@ -1,0 +1,15 @@
+docker --version
+docker pull redis:latest
+docker run -d --name redis -p 6379:6379 redis:latest
+docker ps
+
+test : docker exec -it redis redis-cli  --> ping : pong
+
+
+py --version 
+python -m venv venv
+pip install -r requirements.txt
+python app.py
+celery -A app.tasks worker --pool=threads --concurrency=2 --loglevel=info
+
+

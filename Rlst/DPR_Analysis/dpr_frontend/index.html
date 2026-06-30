@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPR Analytics Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-area">
+                    <span class="logo-icon">📊</span>
+                    <h1>DPR Analytics Dashboard</h1>
+                </div>
+                <p class="header-subtitle">Daily Performance Monitoring & Comparison</p>
+            </div>
+            <div id="todayBanner" class="today-banner"></div>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label for="dashboardType" class="filter-label">Dashboard View</label>
+                    <select id="dashboardType">
+                        <option value="main">Main Dashboard (Overview)</option>
+                        <option value="unit">Unit Dashboard</option>
+                        <option value="department">Department Dashboard</option>
+                        <option value="checklist">Checklist Dashboard</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" id="entityDropdownGroup" style="display: none;">
+                    <label class="filter-label">Select Entity</label>
+                    <div class="searchable-select" id="searchableSelect">
+                        <div class="searchable-select-trigger" id="searchableSelectTrigger">
+                            <span id="selectedEntityText">Select...</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <div class="searchable-select-dropdown" id="searchableSelectDropdown">
+                            <div class="search-input-wrapper">
+                                <span class="search-icon">🔍</span>
+                                <input type="text" id="searchableSelectSearch" placeholder="Search..." autocomplete="off">
+                            </div>
+                            <div class="searchable-select-options" id="searchableSelectOptions">
+                                <!-- Options populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hidden select to maintain script compatibility -->
+                    <select id="entityDropdown" style="display: none;">
+                        <option>Select</option>
+                    </select>
+                </div>
+
+                <button id="loadBtn" class="load-btn">
+                    <span>🔄</span> Load Dashboard
+                </button>
+            </div>
+        </section>
+
+        <!-- KPI Container -->
+        <section id="kpiContainer" class="kpi-section"></section>
+
+        <!-- Charts Container -->
+        <section id="chartsContainer" class="charts-grid" style="display: none;">
+            
+            <div class="chart-card">
+                <h3 id="title-chart1" class="chart-title">7 Day Trend</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 id="title-chart2" class="chart-title">30 Day Trend</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 id="title-chart3" class="chart-title">Submission vs Target</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart3"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 id="title-chart4" class="chart-title">Daily Lapsed</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart4"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 id="title-chart5" class="chart-title">Best Performing Days</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart5"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 id="title-chart6" class="chart-title">Today's Comparison</h3>
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container">
+                        <canvas id="chart6"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js?v=5"></script>
+</body>
+
+</html>

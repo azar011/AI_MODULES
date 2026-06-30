@@ -1,0 +1,5 @@
+
+1. xamp : apache,mysql -> start
+
+2. run : uvicorn main:app --reload    
+

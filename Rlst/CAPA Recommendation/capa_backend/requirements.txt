@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sentence-transformers
+qdrant-client
+numpy
+openai
+python-dotenv
+celery
+redis

@@ -1,0 +1,74 @@
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload   (or)    python run.py
+
+# run worker celery
+celery -A app.tasks worker --pool=threads --concurrency=4 --loglevel=info
+
+open browser : http://127.0.0.1:8002/docs
+
+
+use sample :
+{
+  "department": "IT",
+  "checklist_name": "Smart Classroom",
+  "question": "Is projector functioning correctly?",
+  "remarks": "Projector shutting down automatically due to overheating"
+}
+
+{
+  "department": "ICU",
+  "checklist_name": "Room Hygiene",
+  "question": "Is the ICU room cleaned and sanitized properly?",
+  "remarks": "Floor corners and bed rails were not disinfected properly during cleaning"
+}
+
+{
+  "department": "IT",
+  "checklist_name": "Smart Classroom",
+  "question": "Is audio system functioning properly?",
+  "remarks": "Microphone audio cutting intermittently during lectures"
+}
+
+{
+  "department": "Networking",
+  "checklist_name": "Internet Connectivity Check",
+  "question": "Is internet connectivity stable?",
+  "remarks": "Frequent network disconnection in admin block"
+}
+
+
+
+
+========================================================================================================================
+
+
+from qdrant_client import QdrantClient
+
+qdrant_client = QdrantClient(
+    url="https://c78d23e6-a44b-4be4-892f-35df830c8809.eu-central-1-0.aws.cloud.qdrant.io:6333", 
+    api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIiwic3ViamVjdCI6ImFwaS1rZXk6Njg2MmZjNWMtMTdkNi00MDg5LThlNWYtMjk1YTc1ZjJhNjQyIn0.XSxnQS0nHh_jFBcDUtmsB0W7y32YPD55OYJr4IVs1Mk",
+)
+
+print(qdrant_client.get_collections())
+
+
+
+========================================================================================================================
+
+
+Qdrant install Locally :-
+
+1. https://github.com/qdrant/qdrant/releases?utm_source=chatgpt.com     --> [Download] - qdrant-x86_64-pc-windows-msvc.zip
+2. Extract in C drive -->  C:\qdrant\
+3. Open in cmd --> qdrant.exe
+4. Qdrant starts on http://localhost:6333
+
+On Ubuntu :-
+
+1. https://github.com/qdrant/qdrant/releases?utm_source=chatgpt.com     --> [Download] - qdrant_1.18.2-1_amd64.deb
+2. Open Terminal : sudo dpkg -i qdrant_1.18.2-1_amd64.deb
+3. qdrant
+4. if not : sudo mkdir -p /var/lib/qdrant/storage
+   	    sudo chown -R $USER:$USER /var/lib/qdrant
+	    qdrant
+
+==========================================================================================================================

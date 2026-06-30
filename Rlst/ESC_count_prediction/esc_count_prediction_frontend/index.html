@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tomorrow ESC Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Tomorrow ESC Count Prediction</h1>
+
+    <!-- ===================================== -->
+    <!-- FILTER SECTION -->
+    <!-- ===================================== -->
+
+    <div class="filter-container">
+
+        <!-- LEVEL -->
+
+        <div class="input-box">
+
+            <label>Prediction Level</label>
+
+            <select id="level">
+
+                <option value="building">
+                    Building
+                </option>
+
+                <option value="floor">
+                    Floor
+                </option>
+
+                <option value="department">
+                    Department
+                </option>
+
+                <option value="zone">
+                    Zone
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- BUILDING -->
+
+        <div class="input-box">
+
+            <label>Building</label>
+
+            <select id="building">
+
+                <option value="">
+                    Select Building
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- FLOOR -->
+
+        <div class="input-box">
+
+            <label>Floor</label>
+
+            <select id="floor">
+
+                <option value="">
+                    Select Floor
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- DEPARTMENT -->
+
+        <div class="input-box">
+
+            <label>Department</label>
+
+            <select id="department">
+
+                <option value="">
+                    Select Department
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ZONE -->
+
+        <div class="input-box">
+
+            <label>Zone</label>
+
+            <select id="zone">
+
+                <option value="">
+                    Select Zone
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================================== -->
+    <!-- BUTTON -->
+    <!-- ===================================== -->
+
+    <button id="predictBtn">
+
+        Predict Tomorrow Range
+
+    </button>
+
+
+    <!-- ===================================== -->
+    <!-- OUTPUT -->
+    <!-- ===================================== -->
+
+    <div class="output-section">
+
+        <h2>Prediction Output</h2>
+
+        <textarea id="outputBox"
+                  readonly></textarea>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
